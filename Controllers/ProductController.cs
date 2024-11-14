@@ -8,6 +8,11 @@ namespace project.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private readonly DataContext _context;
+        public ProductController(DataContext context)
+        {
+            _context = context;
+        }
         // GET: api/<ProductController>
         [HttpGet]
         public IEnumerable<string> Get()
